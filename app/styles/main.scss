@@ -1,5 +1,8 @@
 @import '_h5bp';
 
+/***********
+global html/body styling
+***********/
 html,
 body {
   width: 100%;
@@ -15,10 +18,32 @@ body {
   background-color: #fff;
   box-sizing: border-box;
   min-height: 100%;
+  padding: 45px;
 }
 
 body.open {
   overflow: hidden;
+}
+
+/*************
+wrapper/flex-items setup
+*************/
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  border: 3px solid red;
+  height: calc(100vh - 100px);
+  .item {
+    background-color: blue;
+    //width: 50px;
+    //height: 45%;
+    margin: 5px;
+    flex: 1 1 100px;
+  }
+  .item-big {
+    flex: 2 2 200px;
+  }
 }
 
 
