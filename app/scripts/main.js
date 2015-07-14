@@ -43,14 +43,17 @@
   	$.get("http://dash.jaylaiche.com/proxy.php?yws_path=svc/mostpopular/v2/mostviewed/all-sections/1?api-key=568503f1ab8b3cc36369c8c018852c72:17:72461535",
   		function(data){
   			var results = data.results;
+  			var $list = $("<ul>");
   			for(var i = 0; i < 5; i++){
   				var title = results[i].title;
   				var url   = results[i].url;
   				var $link  = $("<a>");
   				$link.attr('href', url);
   				$link.html(title);
-  				$(".item-news").append($link);
+  				var $item = $("<li>").append($link);
+  				$list.append($item);
   			}
+  			$(".item-news").append($list);
   		});
   }
 
